@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button.jsx'
 import { Star, Shield, TrendingUp, Award, ChevronRight, Search, Menu, X, Clock, Users, CheckCircle, Zap, Target, Trophy, Flame, Eye } from 'lucide-react'
+import { NewsSection } from './components/NewsSection'
 import './App.css'
 
 function App() {
@@ -504,6 +505,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <NewsSection />
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
