@@ -185,9 +185,11 @@ function App() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <div className="flex items-center space-x-3 group cursor-pointer">
-              <div className="w-12 h-12 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-300">
-                <span className="text-white font-bold text-xl">WK</span>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Wett-Kompass Logo" 
+                className="w-36 h-36 group-hover:scale-110 transition-all duration-300 filter drop-shadow-[0_0_20px_rgba(234,179,8,0.5)] group-hover:drop-shadow-[0_0_30px_rgba(234,179,8,0.7)] group-hover:brightness-110"
+              />
               <div>
                 <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-blue-900 bg-clip-text text-transparent">
                   Wett-Kompass
