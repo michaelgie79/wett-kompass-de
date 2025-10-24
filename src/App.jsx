@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'wouter'
 import { Button } from '@/components/ui/button.jsx'
 import { Star, Shield, TrendingUp, Award, ChevronRight, Search, Menu, X, Clock, Users, CheckCircle, Zap, Target, Trophy, Flame, Eye } from 'lucide-react'
 import { NewsSection } from './components/NewsSection'
+import { getAllProviders, getAffiliateLink } from './config/affiliate'
 import './App.css'
 
 function App() {
@@ -435,14 +437,26 @@ function App() {
 
                 {/* CTA */}
                 <div className="flex-shrink-0 w-full md:w-auto space-y-3">
-                  <Button size="lg" className="w-full md:w-auto bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group">
-                    <Trophy className="mr-2 w-5 h-5 group-hover:animate-bounce" />
-                    Jetzt wetten
-                    <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                  <Button size="lg" variant="outline" className="w-full md:w-auto border-2 hover:border-blue-600 hover:text-blue-600 hover:scale-105 transition-all">
-                    Zum Testbericht
-                  </Button>
+                  <a
+                    href={getAffiliateLink(provider.id, {
+                      source: 'wett-kompass',
+                      campaign: 'provider-comparison',
+                      medium: 'card-cta'
+                    })}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button size="lg" className="w-full md:w-auto bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group">
+                      <Trophy className="mr-2 w-5 h-5 group-hover:animate-bounce" />
+                      Jetzt wetten
+                      <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    </Button>
+                  </a>
+                  <Link href={`/anbieter/${provider.id}`}>
+                    <Button size="lg" variant="outline" className="w-full md:w-auto border-2 hover:border-blue-600 hover:text-blue-600 hover:scale-105 transition-all">
+                      Zum Testbericht
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
